@@ -4,11 +4,13 @@ cmake_minimum_required(VERSION 3.4.1)
 include_directories(
         log
         render
+        utils
 )
 
 file(GLOB sourceFiles ${CMAKE_SOURCE_DIR}/*.cpp
         ${CMAKE_SOURCE_DIR}/render/*.cpp
-        ${CMAKE_SOURCE_DIR}/log/*.cpp)
+        ${CMAKE_SOURCE_DIR}/log/*.cpp
+        ${CMAKE_SOURCE_DIR}/utils/*.cpp)
 
 message("sourceFiles:"${sourceFiles})
 add_library(
@@ -27,5 +29,6 @@ target_link_libraries(
         native-render
         ${my-log}
         EGL
+        GLESv3
 
 )

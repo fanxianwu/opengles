@@ -24,6 +24,7 @@ void native_uninit(JNIEnv *env,jobject instance){
 
 void onSurfaceCreate(JNIEnv *env,jobject instance){
     LOGI("call onSurfaceCreate");
+    MyGLRenderContext::getInstance()->onSurfaceCreate();
 }
 
 void onSurfaceChange(JNIEnv *env,jobject instance,int width,int height){

@@ -52,7 +52,7 @@ class OpenglActivity:AppCompatActivity(),ViewTreeObserver.OnGlobalLayoutListener
     fun showGlSampleDialog(){
         var alertDialog = AlertDialog.Builder(this)
         var inflater = LayoutInflater.from(this)
-        val rootView = inflater.inflate()
+        //val rootView = inflater.inflate()
     }
 
 
