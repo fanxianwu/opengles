@@ -77,7 +77,7 @@ open abstract class AFilter(mRes:Resources){
 
     protected var textrueType = 0
 
-    protected var textureId = 0
+     var textureId = 0
 
     //顶点坐标
     private val sPos = floatArrayOf(
@@ -88,10 +88,15 @@ open abstract class AFilter(mRes:Resources){
     )
     //纹理坐标
     private val sCoord = floatArrayOf(
-        0.0f,0.0f,
-        0.0f,1.0f,
-        1.0f,0.0f,
-        1.0f,1.0f
+//        0.0f,0.0f,
+//        0.0f,1.0f,
+//        1.0f,0.0f,
+//        1.0f,1.0f
+            0.0f,1.0f,
+            0.0f,0.0f,
+            1.0f,1.0f,
+            1.0f,0.0f
+
     )
 
     private lateinit var mBools:SparseArray<BooleanArray>
@@ -227,7 +232,7 @@ open abstract class AFilter(mRes:Resources){
                     GLES20.glAttachShader(tmpProgram,fragmentShader)
                     GLES20.glLinkProgram(tmpProgram)
                     var status = IntArray(1)
-                    GLES20.glGetProgramiv(tmpProgram,GLES20.GL_COMPILE_STATUS,
+                    GLES20.glGetProgramiv(tmpProgram,GLES20.GL_LINK_STATUS,
                     status,0)
                     if(status[0] != GLES20.GL_TRUE){
                         glError(1,"Could not link program:${GLES20.glGetProgramInfoLog(tmpProgram)}")
@@ -258,7 +263,7 @@ open abstract class AFilter(mRes:Resources){
                     arrayBuff.write(bytes, 0, readNum)
                     readNum = inPutStream.read(bytes)
                 }
-                arrayBuff.toString().replace("\r\n","\n")
+               return  arrayBuff.toString().replace("\r\n","\n")
             }catch (e:Exception){
                 Log.e(TAG,"read assetFile error:${e.toString()}")
             }finally {

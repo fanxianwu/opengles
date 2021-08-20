@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.fanfan.opengl.chartlet.ChartletActivity;
+import com.fanfan.opengl.fbo.FboActivity;
 import com.fanfan.opengl.geometry.activity.FGLViewActivity;
 import com.fanfan.opengl.vary.VaryActivity;
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addData("绘制形体", FGLViewActivity.class);
         addData("图形变换", VaryActivity.class);
         addData("纹理贴图", ChartletActivity.class);
+        addData("FBO", FboActivity.class);
         mRecycleView.setAdapter(new MenuAdapter());
     }
 

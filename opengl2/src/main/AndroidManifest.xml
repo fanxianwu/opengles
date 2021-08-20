@@ -3,6 +3,7 @@
     package="com.fanfan.opengl">
 
     <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -19,6 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".geometry.activity.FGLViewActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".fbo.FboActivity"
             android:screenOrientation="portrait"></activity>
         <activity android:name=".chartlet.ChartletActivity"
             android:screenOrientation="portrait"></activity>

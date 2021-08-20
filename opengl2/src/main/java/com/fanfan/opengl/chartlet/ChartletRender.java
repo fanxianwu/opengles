@@ -127,10 +127,10 @@ public class ChartletRender implements GLSurfaceView.Renderer {
                 Matrix.orthoM(mProjectMatrix,0,-screenRadio/imgRadio,screenRadio/imgRadio,-1,1,3,8);
             }
         }else{
-            if(imgRadio > screenRadio && imgRadio < 1.0){
+            if(imgRadio > screenRadio && imgRadio > 1.0){
                 //竖屏但是图片是横屏
                 Matrix.orthoM(mProjectMatrix,0,-1,1,-imgRadio/(screenRadio),imgRadio/screenRadio,3,8);
-            }else if(imgRadio > screenRadio && imgRadio >=1.0){
+            }else if(imgRadio > screenRadio && imgRadio <=1.0){
                 //屏幕和图片都是竖屏
                 Matrix.orthoM(mProjectMatrix,0,-1,1,-(screenRadio*imgRadio),1/(screenRadio*imgRadio),3,8);
             }else{

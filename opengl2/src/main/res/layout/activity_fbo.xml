@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <android.opengl.GLSurfaceView
+        android:id="@+id/fbo_glView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.opengl.GLSurfaceView>
+    <ImageView
+        android:id="@+id/fbo_imgView"
+        android:scaleType="centerInside"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ImageView>
+    <Button
+        android:id="@+id/fbo_btn"
+        android:text="@string/select_picture"
+        android:textColor="@color/black"
+        android:layout_margin="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></Button>
+</RelativeLayout>

@@ -46,7 +46,7 @@ class VaryRender(res:Resources):GLSurfaceView.Renderer {
 
         tools.pushMatrix()
         tools.translate(0f,-3f,0f)
-        tools.rotate(30f,1f,1f,1f)
+        tools.rotate(-30f,1f,1f,1f)
         cube.setMatrix(tools.getFinalMatrix())
         cube.drawSelf()
         tools.popMatrix()

@@ -12,18 +12,19 @@ import java.nio.ShortBuffer
 class Cube(var res:Resources) {
 
 
-
+    //矩阵定点坐标
     private val cubePositions = arrayOf(
-        -1.0f,1.0f,1.0f,
-        -1.0f,-1.0f,1.0f,
-        1.0f,-1.0f,1.0f,
-        1.0f,1.0f,1.0f,
-        -1.0f,1.0f,-1.0f,
-        -1.0f,-1.0f,-1.0f,
-        1.0f,-1.0f,-1.0f,
-        1.0f,1.0f,-1.0f
+        -1.0f,1.0f,1.0f, //前面左上点
+        -1.0f,-1.0f,1.0f, //前面左下点
+        1.0f,-1.0f,1.0f,  //前面右下点
+        1.0f,1.0f,1.0f,   //前面右上点
+        -1.0f,1.0f,-1.0f, //后面左上点
+        -1.0f,-1.0f,-1.0f, //后面左下点
+        1.0f,-1.0f,-1.0f,  //后面右下点
+        1.0f,1.0f,-1.0f   //后面右上点
     );
 
+    // element 坐标
     private val index = shortArrayOf(
         6, 7, 4, 6, 4, 5,    //后面
         6, 3, 7, 6, 2, 3,    //右面
@@ -32,6 +33,7 @@ class Cube(var res:Resources) {
         0, 1, 5, 0, 5, 4,    //左面
         0, 7, 3, 0, 4, 7    //上面
     )
+    //顶点颜色值
     private val color  = floatArrayOf(
         0f,1f,0f,1f,
         0f,1f,0f,1f,
@@ -56,7 +58,6 @@ class Cube(var res:Resources) {
     }
 
     private fun initData(){
-        Log.i("fanfan","cubePositions is ${cubePositions} and res is ${res}")
         val a = ByteBuffer.allocateDirect(cubePositions.size*4)
         a.order(ByteOrder.nativeOrder())
         vertexBuf = a.asFloatBuffer()
